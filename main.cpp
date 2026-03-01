@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     // Create socket for connections
 
     // Loop through all ports
-    for (int port = 0; port < highest_port; port++) {
+    for (int port = 1; port <= highest_port; port++) {
         address.sin_port = htons(port);
         int sockfd = socket(AF_INET, SOCK_STREAM, 0);
         int success = connect(sockfd, (struct sockaddr*)&address, sizeof(address));
